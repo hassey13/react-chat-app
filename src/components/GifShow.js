@@ -1,7 +1,7 @@
 import React from 'react'
 
-var GifShow = () => {
-  return <div>Gif Show</div>
+var GifShow = (props) => {
+  return <div>{ props.gif }</div>
 }
 
 export default GifShow
