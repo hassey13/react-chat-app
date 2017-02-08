@@ -1,16 +1,20 @@
-import React from 'react'
-import NavBar from './NavBar'
+import React, { Component } from 'react'
 
-import GifPage from './GifPage'
+import ChatApp from './ChatApp'
 
-var App = () => {
-  // React.createElement(NavBar, {header: 'Ruby Doo'})
-  return (
-    <div>
-      < NavBar header='Hey Ruby Doo' />
-      < GifPage />
-    </div>
-  )
+export default class App extends Component {
+  render(){
+    return(
+      <div className='container'>
+        <h1>Chat App!</h1>
+        <div className="padding"></div>
+        <div className="padding"></div>
+        <div className="padding"></div>
+        <div className="padding"></div>
+        <div className="padding"></div>
+        <div className="padding"></div>
+        <div className="padding"></div>
+        < ChatApp store={ this.props.store }/>
+      </div>)
+  }
 }
-
-export default App

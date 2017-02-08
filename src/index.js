@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom'
 
 import App from './components/App'
 
-ReactDOM.render(<App />, document.getElementById('container'))
+import { createStore } from 'redux';
+import messagesReducer from './reducers/messagesReducer'
 
-// Create two components, one called NavBar and one Called App
+import {addMessage} from './actions/index'
 
-// Our NavBar should just have a title on it
-// For now, our App component should just render our NavBar component
+const store = createStore(messagesReducer)
 
-// HINT: We are using Babel and Webpack - how do we import other modules using ES6 syntax?
+store.dispatch(addMessage({content: 'Hello', sender: "message-other"}))
+store.dispatch(addMessage({content: 'Anyone want to play?', sender: "message-other"}))
+
+ReactDOM.render(<App store={store}/>, document.getElementById('container'))
